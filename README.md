@@ -1,6 +1,6 @@
-# Statamic Admin Log
+# [WIP] Statamic Admin Log
 
-This addon creates a new log which records every action taken by yoour users in the control panel, allowing you to track who changed what and when.
+This addon creates a new log which records every action taken by your users in the control panel, allowing you to track who changed what and when.
 
 ## Requirements
 

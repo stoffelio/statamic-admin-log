@@ -1,0 +1,25 @@
+{
+    "name": "webographen/statamic-admin-log",
+    "license": "MIT",
+    "type": "statamic-addon",
+    "description": "Logs all user actions in the control panel",
+    "autoload": {
+      "psr-4": {
+        "Webographen\\AdminLog\\": "src"
+      }
+    },
+    "extra": {
+      "statamic": {
+        "name": "Statamic Admin Log",
+        "description": "Logs all user actions in the control panel"
+      },
+      "laravel": {
+        "providers": [
+          "Webographen\\AdminLog\\ServiceProvider"
+        ]
+      }
+    },
+    "require": {
+      "statamic/cms": "^3.0"
+    }
+  }

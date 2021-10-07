@@ -11,10 +11,10 @@ return [
      * You can automatically delete log files after a certain amount of days.
      * Setting this to 0 will prevent any deletions.
      */
-    'delete_after' => 0,
+    'delete-after' => 30,
 
     /*
      * Option to change the name of the log files to avoid any conflicts.
      */
-    'log_name' => 'adminlog',
+    'log-name' => 'adminlog',
 ];

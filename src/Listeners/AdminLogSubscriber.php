@@ -20,7 +20,6 @@ use Statamic\Events\FieldsetDeleted;
 use Statamic\Events\FieldsetSaved;
 use Statamic\Events\FormDeleted;
 use Statamic\Events\FormSaved;
-use Statamic\Events\FormSubmitte;
 use Statamic\Events\GlobalSetDeleted;
 use Statamic\Events\GlobalSetSaved;
 use Statamic\Events\NavDeleted;
@@ -49,7 +48,9 @@ class AdminLogSubscriber
      */
     public function addEntry($message)
     {
-        Log::channel('adminlog')->info(auth()->user()->name." ('".auth()->user()->id()."') ".$message);
+        if (config('admin-log.enabled', false)) {
+            Log::channel('adminlog')->info(auth()->user()->name." ('".auth()->user()->id()."') ".$message);
+        }
     }
 
     /**

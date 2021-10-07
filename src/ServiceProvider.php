@@ -37,9 +37,9 @@ class ServiceProvider extends AddonServiceProvider
 
         $this->app->make('config')->set('logging.channels.adminlog', [
             'driver' => 'daily',
-            'path' => storage_path('logs/adminlog.log'),
+            'path' => storage_path('logs/'.config('admin-log.log-name', 'adminlog').'.log'),
             'level' => 'debug',
-            'days' => 14,
+            'days' => config('admin-log.delete-after', 30),
         ]);
     }
 }

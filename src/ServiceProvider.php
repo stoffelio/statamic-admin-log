@@ -22,6 +22,18 @@ class ServiceProvider extends AddonServiceProvider
     public function boot()
     {
         parent::boot();
+        
+        $this->mergeConfigFrom(__DIR__.'/../config/admin_log.php', 'admin_log');
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/admin_log.php' => config_path('admin_log.php'),
+            ], 'admin_log');
+        }
+
+        Statamic::afterInstalled(function ($command) {
+            $command->call('vendor:publish', ['--tag' => 'admin_log']);
+        });
 
         $this->app->make('config')->set('logging.channels.adminlog', [
             'driver' => 'daily',

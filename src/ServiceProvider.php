@@ -29,7 +29,5 @@ class ServiceProvider extends AddonServiceProvider
             'level' => 'debug',
             'days' => 14,
         ]);
-
-        //\Illuminate\Support\Facades\Log::channel('adminlog')->info('boot');
     }
 }

@@ -14,7 +14,11 @@ From your site folder, run `composer require webographen/statamic-admin-log` - o
 
 ## Usage
 
-Statamic Admin Log will start logging all actions in  th control panel once it is installed. More options soon.
+Statamic Admin Log will start logging all actions in the control panel once it is installed. 
+
+The logs are saved in the default log directory (usually `storage/logs`).
+
+If you want to be able to access your logs from the control panel, we recommend the free [Logbook](https://statamic.com/addons/aryeh-raber/logbook) addon.
 
 ## ToDo
 

@@ -22,7 +22,6 @@ If you want to be able to access your logs from the control panel, we recommend 
 
 ## ToDo
 
-- [ ] Create permission for viewing the logs
 - [ ] Create config for deleting logs after x days
 - [ ] Differentiate between create and edit events
 - [ ] Create verbose log option (details regarding change made)

@@ -23,16 +23,16 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
         
-        $this->mergeConfigFrom(__DIR__.'/../config/admin_log.php', 'admin_log');
+        $this->mergeConfigFrom(__DIR__.'/../config/admin-log.php', 'admin-log');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/admin_log.php' => config_path('admin_log.php'),
-            ], 'admin_log');
+                __DIR__.'/../config/admin-log.php' => config_path('admin-log.php'),
+            ], 'admin-log');
         }
 
         Statamic::afterInstalled(function ($command) {
-            $command->call('vendor:publish', ['--tag' => 'admin_log']);
+            $command->call('vendor:publish', ['--tag' => 'admin-log']);
         });
 
         $this->app->make('config')->set('logging.channels.adminlog', [

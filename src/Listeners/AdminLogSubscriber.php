@@ -49,7 +49,7 @@ class AdminLogSubscriber
      */
     public function addEntry($message)
     {
-        Log::channel('adminlog')->info($message);
+        Log::channel('adminlog')->info(auth()->user()->name." ('".auth()->user()->id()."') ".$message);
     }
 
     /**

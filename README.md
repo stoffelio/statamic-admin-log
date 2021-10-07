@@ -1,6 +1,8 @@
-# [WIP] Statamic Admin Log
+# Statamic Admin Log
 
 This addon creates a new log which records every action taken by your users in the control panel, allowing you to track who changed what and when.
+
+Currently still in development, activiely working on additional features and fine tuning (see ToDo below).
 
 ## Requirements
 
@@ -12,33 +14,17 @@ From your site folder, run `composer require webographen/statamic-admin-log` - o
 
 ## Usage
 
-Statamic Admin Log will start logging all actions in  th control panel once it is installed.
+Statamic Admin Log will start logging all actions in  th control panel once it is installed. More options soon.
 
-TODO: IP address setting
+## ToDo
 
-To add the widget to your control panel dashboard, edit the config under `config/statamic/cp.php` and add the following entry to the `widgets` array:
-
-```php
-[
-    'type' => 'continue_editing',
-    'width' => 100,
-],
-
-```
-
-## Optional Settings
-
-By default the widget display the last five entries across all collections. You can modify this by adding two more parameters:
-
-```php
-[
-    'type' => 'continue_editing',
-    'width' => 100,
-    'collections' => '*',
-    'limit' => 5
-],
-
-```
+- [ ] Create permission for viewing the logs
+- [ ] Create config for deleting logs after x days
+- [ ] Differentiate between create and edit events
+- [ ] Create verbose log option (details regarding change made)
+- [ ] Add more useful events
+- [ ] Add IP logging option
+- [ ] Tests :)
 
 ## About Us
 

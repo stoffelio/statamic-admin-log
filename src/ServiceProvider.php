@@ -8,7 +8,6 @@ use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
-    protected $viewNamespace = 'webographen';
 
     /**
      * The subscriber classes to register.

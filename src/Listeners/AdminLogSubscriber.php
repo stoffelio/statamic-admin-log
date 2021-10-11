@@ -49,7 +49,11 @@ class AdminLogSubscriber
     public function addEntry($message)
     {
         if (config('admin-log.enabled', false)) {
-            Log::channel('adminlog')->info(auth()->user()->name." ('".auth()->user()->id()."') ".$message);
+            if (auth()->user()) {
+                Log::channel('adminlog')->info(auth()->user()->name." ('".auth()->user()->id()."') ".$message);
+            } else {
+                Log::channel('adminlog')->info("unknown user (cli) ".$message);
+            }
         }
     }
 

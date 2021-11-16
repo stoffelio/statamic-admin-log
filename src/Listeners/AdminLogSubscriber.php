@@ -429,7 +429,6 @@ class AdminLogSubscriber
             NavSaved::class => 'handleNavSaved',
             RoleDeleted::class => 'handleRoleDeleted',
             RoleSaved::class => 'handleRoleSaved',
-            SubmissionCreated::class => 'handleSubmissionCreated',
             SubmissionDeleted::class => 'handleSubmissionDeleted',
             TaxonomyDeleted::class => 'handleTaxonomyDeleted',
             TaxonomySaved::class => 'handleTaxonomySaved',

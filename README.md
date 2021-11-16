@@ -40,7 +40,7 @@ Currently these events are logged automatically:
 - Entry (create/edit, delete)
 - Fieldset (create/edit, delete)
 - Form (create/edit, delete)
-- Form Submission (create/edit, delete)
+- Form Submission (delete)
 - Global Set (create/edit, delete)
 - Navigation (create/edit, delete)
 - Taxonomy (create/edit, delete)

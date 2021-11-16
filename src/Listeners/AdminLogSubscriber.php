@@ -311,17 +311,6 @@ class AdminLogSubscriber
     }
 
     /**
-     * Handle the SubmissionSaved event.
-     *
-     * @param  SubmissionSaved $event
-     * @return void
-     */
-    public function handleSubmissionSaved(SubmissionSaved $event)
-    {
-        $this->addEntry("edited submission for '".$event->submission->title()."'");
-    }
-
-    /**
      * Handle the TaxonomyDeleted event.
      *
      * @param  TaxonomyDeleted $event
@@ -442,7 +431,6 @@ class AdminLogSubscriber
             RoleSaved::class => 'handleRoleSaved',
             SubmissionCreated::class => 'handleSubmissionCreated',
             SubmissionDeleted::class => 'handleSubmissionDeleted',
-            SubmissionSaved::class => 'handleSubmissionSaved',
             TaxonomyDeleted::class => 'handleTaxonomyDeleted',
             TaxonomySaved::class => 'handleTaxonomySaved',
             TermDeleted::class => 'handleTermDeleted',

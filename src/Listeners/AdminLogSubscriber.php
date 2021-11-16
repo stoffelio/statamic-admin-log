@@ -307,7 +307,7 @@ class AdminLogSubscriber
      */
     public function handleSubmissionDeleted(SubmissionDeleted $event)
     {
-        $this->addEntry("deleted submission for '".$event->submission->title()."'");
+        $this->addEntry("deleted submission with id '".$event->submission->id()."' for form '".$event->submission->form()->title()."' (handle: '".$event->submission->form()->handle()."')");
     }
 
     /**

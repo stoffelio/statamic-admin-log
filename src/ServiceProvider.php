@@ -3,7 +3,7 @@
 namespace Webographen\AdminLog;
 
 use Statamic\Providers\AddonServiceProvider;
-use Webographen\AdminLog\Listeners\AdminLogSubscriber;
+use Webographen\AdminLog\Subscribers\AdminLogSubscriber;
 use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webographen\AdminLog\Listeners;
+namespace Webographen\AdminLog\Subscribers;
 
 use Illuminate\Support\Facades\Log;
 
@@ -22,13 +22,13 @@ use Statamic\Events\FormDeleted;
 use Statamic\Events\FormSaved;
 use Statamic\Events\GlobalSetDeleted;
 use Statamic\Events\GlobalSetSaved;
+use Statamic\Events\GlobalVariablesDeleted;
+use Statamic\Events\GlobalVariablesSaved;
 use Statamic\Events\NavDeleted;
 use Statamic\Events\NavSaved;
 use Statamic\Events\RoleDeleted;
 use Statamic\Events\RoleSaved;
-use Statamic\Events\SubmissionCreated;
 use Statamic\Events\SubmissionDeleted;
-use Statamic\Events\SubmissionSaved;
 use Statamic\Events\TaxonomyDeleted;
 use Statamic\Events\TaxonomySaved;
 use Statamic\Events\TermDeleted;
@@ -256,6 +256,28 @@ class AdminLogSubscriber
     }
 
     /**
+     * Handle the GlobalVariablesDeleted event.
+     *
+     * @param  GlobalVariablesDeleted $event
+     * @return void
+     */
+    public function handleGlobalVariablesDeleted(GlobalVariablesDeleted $event)
+    {
+        $this->addEntry("deleted global variables for '".$event->variables->globalSet()->title()."' (handle: '".$event->variables->globalSet()->handle()."') in site '".$event->variables->locale()."'");
+    }
+
+    /**
+     * Handle the GlobalVariablesSaved event.
+     *
+     * @param  GlobalVariablesSaved $event
+     * @return void
+     */
+    public function handleGlobalVariablesSaved(GlobalVariablesSaved $event)
+    {
+        $this->addEntry("created/edited global variables for '".$event->variables->globalSet()->title()."' (handle: '".$event->variables->globalSet()->handle()."') in site '".$event->variables->locale()."'");
+    }
+
+    /**
      * Handle the NavDeleted event.
      *
      * @param  NavDeleted $event
@@ -425,6 +447,8 @@ class AdminLogSubscriber
             FormSaved::class => 'handleFormSaved',
             GlobalSetDeleted::class => 'handleGlobalSetDeleted',
             GlobalSetSaved::class => 'handleGlobalSetSaved',
+            GlobalVariablesDeleted::class => 'handleGlobalVariablesDeleted',
+            GlobalVariablesSaved::class => 'handleGlobalVariablesSaved',
             NavDeleted::class => 'handleNavDeleted',
             NavSaved::class => 'handleNavSaved',
             RoleDeleted::class => 'handleRoleDeleted',

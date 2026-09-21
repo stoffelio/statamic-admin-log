@@ -4,22 +4,22 @@
     "type": "statamic-addon",
     "description": "Logs all user actions in the control panel",
     "autoload": {
-      "psr-4": {
-        "Webographen\\AdminLog\\": "src"
-      }
+        "psr-4": {
+            "Webographen\\AdminLog\\": "src"
+        }
     },
     "extra": {
-      "statamic": {
-        "name": "Statamic Admin Log",
-        "description": "Logs all user actions in the control panel"
-      },
-      "laravel": {
-        "providers": [
-          "Webographen\\AdminLog\\ServiceProvider"
-        ]
-      }
+        "statamic": {
+            "name": "Statamic Admin Log",
+            "description": "Logs all user actions in the control panel"
+        },
+        "laravel": {
+            "providers": [
+                "Webographen\\AdminLog\\ServiceProvider"
+            ]
+        }
     },
     "require": {
-      "statamic/cms": "^3.0||^4.0||^5.0"
+        "statamic/cms": "^6.0"
     }
-  }
+}
